@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Resithemi</title>
+
+    <link rel="stylesheet" href="./css/resithemi.css">
+
+    <script src="./js/lib/jquery-2.1.3.min.js"></script>
+    <script src="./js/lib/jquery.mixitup.js"></script>
+    <script src="./js/lib/underscore.js"></script>
+    <script src="./js/main.js"></script>
+</head>
+<body>
+<div id="canvas_input">
+    <form class="pure-form pure-form-aligned">
+        <fieldset>
+            <legend>Input data</legend>
+            <div class="pure-control-group">
+                <label for="inputCsv">CSV</label>
+                <textarea id="inputCsv"></textarea>
+            </div>
+            <div class="pure-control-group">
+                <label for="inputGenerationLimit">Generation limit</label>
+                <input id="inputGenerationLimit" type="number" value="300">
+            </div>
+            <div class="pure-controls">
+                <button type="button" id="runButton" class="button-success pure-button">Run</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<div id="canvas_running">
+    <form class="pure-form">
+        <fieldset>
+            <legend>State: <span id="state">Calculating...</span></legend>
+            <button type="button" id="prevButton" class="pure-button pure-button-primary">Prev</button>
+            <input id="generationCounter" type="text" placeholder="generation number" readonly>
+            <button type="button" id="nextButton" class="pure-button pure-button-primary">Next</button>
+            <button type="button" id="newestButton" class="button-success pure-button">Newest</button>
+            <span>Scores: <span id="score"></span> ...</span>
+        </fieldset>
+    </form>
+    <div id="result-box"></div>
+
+    <textarea id="outputTSV"></textarea>
+</div>
+
+<p id="footer">
+    This software is released under the MIT License.<br>
+    Copyright (c) 2016 Satoshi Funayama (Akchan)
+</p>
+</body>
+</html>
