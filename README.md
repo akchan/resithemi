@@ -5,7 +5,7 @@ Resithemiは遺伝的アルゴリズムを用いてスケジューリングを�
 
 
 
-サンプル
+Sample
 ========================================
 
 リポジトリ内の `sample/resithemi.html` に動作サンプルがあります。リポジトリは `git clone` コマンドを用いるか、[https://github.com/akchan/resithemi](https://github.com/akchan/resithemi) の画面右上`Download ZIP` からダウンロードすることができます。
@@ -62,10 +62,10 @@ setOptionParser(function(csvString) {
         options = {capacities: {} };
 
     for (var i = 0; i < lines.length; i++) {
-        var ary = lines[i].split(“,”),
-            name = ary[0],
+        var ary = lines[i].split(','),
+            department = ary[0],
             capacity = Number(ary[1]);
-        options.capacities[name] = capacity;
+        options.capacities[department] = capacity;
     }
     
     return options;
@@ -140,6 +140,22 @@ GA.Gene.add_evaluator(function(name, currentSchedule, initialSchedule) {
 ```
 
 
+Run
+----------------------------------------
+
+以下のものが準備できたら `resithemi.html` をWebブラウザで開きます。
+
+- 入力データ（CSV）
+- js/option_parser.js (option)
+- js/config.js
+
+入力データをtextareaに入力し、画面下のRunボタンを押してResithemiを実行します。
+
+実行中は遺伝的アルゴリズムにおける各世代の最高評価を得たスケジュールが表示されます。
+
+終了するとdoneダイアログが表示されます。
+
+
 
 Build
 ========================================
@@ -151,7 +167,7 @@ ResithemiではビルドツールにGruntを使用しています。
 ```bash
 cd /path/to/app
 npm install
-grunt less:development
+grunt
 ```
 
 
@@ -161,7 +177,7 @@ License
 
 Copyright (c) 2016 Satoshi Funayama (akchan)
 
-このソフトウェアはMITライセンスの元で公開されています。LICENSE.txtを参照して下さい。
+このソフトウェアはMITライセンスで公開されています。LICENSE.txtを参照して下さい。
 
 
 
