@@ -1659,6 +1659,13 @@ a.pure-button-selected {
 .pure-table-horizontal tbody > tr:last-child td {
   border-bottom-width: 0;
 }
+/*
+ * Resithemi
+ * https://github.com/akchan/resithemi
+ *
+ * Copyright (c) 2016 Satoshi Funayama (akchan)
+ * This software is released under the MIT License.
+ */
 /**********************************
  * Variables
  *********************************/
