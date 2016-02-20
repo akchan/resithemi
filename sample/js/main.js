@@ -348,23 +348,6 @@ jQuery(document).ready(function($) {
                         alert('done!');
                         clearIntervalID();
 
-
-                        // 論文検討用コード
-                        var bestSchedule = results[results.length - 1].bestChromosome;
-                        var tsv = _.chain(bestSchedule)
-                                    .map(function(ary){
-                                        var name     = ary[0],
-                                            schedule = ary[1];
-                                        return [name].concat(schedule).join('\t');
-                                    }).value().join('\n');
-                        $('#outputTSV').text(tsv).slideDown();
-                        var fitnesses = _.map(results, function(obj) {
-                            return Math.max.apply(null, obj.fitness);
-                        });
-                        $('body').append(fitnesses.join(','));
-                        // ここまで
-
-
                         return true;
                     }
                 };
