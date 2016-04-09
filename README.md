@@ -1,21 +1,17 @@
 Resithemi
 ========================================
 
-Resithemiは遺伝的アルゴリズムを用いてスケジューリングを行うためのJavaScriptフレームワークです。遺伝的アルゴリズムを用いたスケジュール最適化を簡便に行うことができます。初期臨床研修医の診療科ローテーションスケジューリングを想定して開発されています。
+Resithemiは遺伝的アルゴリズムを用いてスケジューリングを行うためのJavaScriptフレームワークです。遺伝的アルゴリズムを用いたスケジュール最適化を簡便に行うことができます。
 
-
+Resithemiは初期臨床研修医の診療科ローテーションスケジューリングを想定して開発されています。
 
 Sample
 ========================================
 
-リポジトリ内の `sample/resithemi.html` に動作サンプルがあります。リポジトリは `git clone` コマンドを用いるか、[https://github.com/akchan/resithemi](https://github.com/akchan/resithemi) の画面右上`Download ZIP` からダウンロードすることができます。
-
-
+リポジトリ内の `sample/resithemi.html` に動作サンプルがあります。リポジトリのダウンロードは `git clone` コマンドを用いるか、[https://github.com/akchan/resithemi](https://github.com/akchan/resithemi) の画面右上`Download ZIP` から行うことができます。
 
 How to use
 ========================================
-
-
 
 入力データ
 ----------------------------------------
@@ -37,14 +33,12 @@ ResidentR,Psychiatry,Anesthesiology, ...
 CSV for option parser
 ```
 
-
-
 Options parser
 ----------------------------------------
 
 入力データのR+2行目以降をevaluatorで使用したい場合は `js/option_parser.js` 内にparserを定義します。
 
-#### 診療科ごとに定員を定義する例
+### 診療科ごとに定員を定義する例
 
 入力データのR+2行目以降
 
@@ -72,8 +66,6 @@ setOptionParser(function(csvString) {
 });
 ```
 
-
-
 Evaluator
 ----------------------------------------
 
@@ -82,7 +74,6 @@ Evaluator
 EvaluatorはGeneオブジェクトとChromosomeオブジェクトのそれぞれに対して定義できます。
 
 ※GeneオブジェクトへのevaluatorとChromosomeオブジェクトのどちらでも定義可能なものはできるだけGeneオブジェクトでevaluatorを定義した方が高速に動作します。
-
 
 ### GA.Gene.add_evaluator(function)
 
@@ -95,7 +86,6 @@ Geneオブジェクトにevaluatorを定義する関数。
 	- currentSchedule: 現在のスケジュールを示す配列
 	- initialSchedule: 初期スケジュールを示す配列
 
-
 ### GA.Chromosome.add_evaluator(function)
 
 Chromosomeオブジェクトにevaluatorを定義する関数。
@@ -104,7 +94,6 @@ Chromosomeオブジェクトにevaluatorを定義する関数。
 
 - function: 1つの引数を受け取りNumberオブジェクトを返す関数。返値が大きいほど良いスケジュールとして評価される。
 	- genes: Chromosomeオブジェクトが管理しているGeneオブジェクトの配列。
-
 
 ### 例
 
@@ -139,7 +128,6 @@ GA.Gene.add_evaluator(function(name, currentSchedule, initialSchedule) {
 });
 ```
 
-
 Run
 ----------------------------------------
 
@@ -155,8 +143,6 @@ Run
 
 終了するとdoneダイアログが表示されます。
 
-
-
 Build
 ========================================
 
@@ -169,8 +155,6 @@ cd /path/to/app
 npm install
 grunt
 ```
-
-
 
 License
 ========================================
